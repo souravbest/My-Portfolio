@@ -3,7 +3,7 @@
 <!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-	<script
+	<!-- <script
 			src="https://code.jquery.com/jquery-3.4.1.js"
 			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 			crossorigin="anonymous"></script>
@@ -21,7 +21,7 @@
 				  }
 			  });
 		  }
-		  </script>
+		  </script> -->
     <!--ADSENSE-->
 <!--     <script data-ad-client="ca-pub-1642640364155791" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <meta name="google-site-verification" content="02wm8dMp79FlxOu-QNCovzR5Sdqrn-DnoaZ7fzDLMpg" /> -->
@@ -47,8 +47,8 @@
     <meta name="copyright" content="Sourav Pratim Borah">
     <meta name="reply-to" content="borahsanjubest@gmail.com">
     <meta name="owner" content="Sourav Pratim Borah">
-    <meta name="url" content="https://github.com/souravbest/master.git">
-    <meta name="identifier-URL" content="https://github.com/souravbest/master.git">
+    <meta name="url" content="https://souravbest.github.io/My-Portfolio/My-Portfolio/">
+    <meta name="identifier-URL" content="https://souravbest.github.io/My-Portfolio/My-Portfolio/">
     <meta name="directory" content="submission">
     <meta name="category" content="Business | Portfolio">
     <meta name="coverage" content="Worldwide">
@@ -97,7 +97,7 @@
    			<a class="menu-toggle" href="#"><span>Menu</span></a>
 
 	   		<div class="logo">
-		         <a href="index.html"Sourav Pratim Borah></a>
+		         <a href="index.html">Sourav Pratim Borah</a>
 		      </div>		      
 
 		   	<nav id="main-nav-wrap">
@@ -130,7 +130,7 @@
 
                     <p class="intro-position">
                         <span>FRONT-END DEVELOPER</span>
-                        <span>BACKEND</span>
+                        <span>BACK-END(CORE JAVA)</span>
                         <span>LEARNER</span>
                     </p>
 
@@ -195,7 +195,7 @@
    				</li>
    				<li>
    					<strong>Website:</strong>
-   					<span><a href="#">https://souravbest.github.io/Portfolio/</a></span>
+   					<span><a href="#">https://souravbest.github.io/My-Portfolio/My-Portfolio/</a></span>
    				</li>
                     <li>
                         <strong>Email:</strong>
@@ -512,21 +512,24 @@
 			
 
 <!-- form -->
-<form name="myForm" id="myForm">
+<form method="post" autocomplete="off" name="google-sheet">
       			<fieldset>
                     <div class="form-field">
  				<input name="name" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
                     </div>
                     <div class="form-field">
-				<input name="_replyto" type="email" id="contactEmail" placeholder="Email" value="" required="">
+				<input name="email" type="email" id="contactEmail" placeholder="Email" value="" required="">
 	                </div>
                     <div class="form-field">
-				<input name="_subject" type="text" id="contactSubject" placeholder="Subject" value="">
+				<input name="subject" type="text" id="contactSubject" placeholder="Subject" value="">
 	                </div>                       
                     <div class="form-field">
 	                 	<textarea name="message" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
-	                </div>                      
-                    <div class="form-field">
+	                </div>   
+					<div class="form-group">
+						<input type="submit" name="submit" class="btnSubmit btn-block" value="Submit" />
+					</div>                   
+                    <!-- <div class="form-field">
                         <button class="submitform" name="submit">Submit</button>
                         <div id="submit-loader">
 			    <div class="text-loader">Sending...</div>                             
@@ -536,11 +539,24 @@
 					<div class="bounce3"></div>
 				    </div>
 			</div>
-                    </div>
+                    </div> -->
 
 	</fieldset>
 </form>
+<script>
+	const scriptURL = 'https://script.google.com/macros/s/AKfycbzn1cB_HnqowBeqFjAJhGU2fmL2KSiGzmTcu9zBLFTTl164lW2NNqYQ3PMg3vAPVzltOA/exec'
+	const form = document.forms['google-sheet']
+  
+	form.addEventListener('submit', e => {
+	  e.preventDefault()
+	  fetch(scriptURL, { mode: 'no-cors', method: 'post', body: new FormData(form)})
+		.then(response => alert("Your message was sent, thank you!"))
+		.catch(error => console.error('Error!', error.message))
+	})
+  </script>
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <!-- contact-warning -->
 <!-- <div id="message-warning">            	
             </div> 
@@ -552,6 +568,7 @@
          </div> <!-- /col-twelve -->
    		
    	</div> <!-- /contact-form -->
+	  
 
    	<div class="row contact-info">
 

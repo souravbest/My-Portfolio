@@ -1101,9 +1101,9 @@ header .top-bar {
 }
 header .logo {
 	float: left;
-	/* margin-left: 20px; */
-	margin-right: 50px;
-	margin-top: 25px;
+	 margin-left: 60px; 
+	margin-right: 14px;
+	margin-top: -38px;
 	position: center;
 }
 header .logo a {
@@ -1121,7 +1121,7 @@ header .logo a {
 }
 header{
 	background-color: black;
-	width: 220px;
+	width: 253px;
 	height:66px;
 	display: inline;
 }
